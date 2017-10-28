@@ -2,6 +2,7 @@
 
 RPSGame::RPSGame()
 {
+	srand((unsigned)time(0));
 	init();
 }
 
@@ -56,15 +57,15 @@ void RPSGame::setHumanTool(int strength)
 
 	if (humanTool == 'R')
 	{
-		computer = new Rock(strength);
+		human = new Rock(strength);
 	}
 	else if (humanTool == 'P')
 	{
-		computer = new Paper(strength);
+		human = new Paper(strength);
 	}
 	else if (humanTool == 'S')
 	{
-		computer = new Scissors(strength);
+		human = new Scissors(strength);
 	}
 }
 
@@ -76,7 +77,7 @@ void RPSGame::setCompStrength(int hStrength, int& cStrength)
 	}
 	else if (hStrength != 1)
 	{
-		cStrength = ((rand() % (hStrength + 1)) + (hStrength - 1)); //Sets Comp strength to random value within 1 of human strength
+		cStrength = ((rand() % 3) + (hStrength - 1)); //Sets Comp strength to random value within 1 of human strength
 	}
 }
 void RPSGame::setHumanStrength(int& hStrength)

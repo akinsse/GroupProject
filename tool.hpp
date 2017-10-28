@@ -10,6 +10,7 @@ public:
   char getType() const;
   void setStrength(int);
   void setType(char);
+  virtual int fight(Tool) { return 0; }
 
 protected:
   int strength;

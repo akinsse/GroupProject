@@ -1,6 +1,9 @@
 #ifndef RPSGAME_HPP
 #define RPSGAME_HPP
-#include "inputValidation.hpp"
+#include "C:\Code\rec_functions\rec_functions\inputValidation.hpp"
+#include "paper.hpp"
+#include "rock.hpp"
+#include "scissors.hpp"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -8,12 +11,9 @@ using std::cout;
 using std::endl;
 
 
-class Tool;
-class Rock;
-class Paper;
-class Scissors;
+
 enum WinType {HumanWin=0, ComputerWin, Tie};
-srand((unsigned)time(0));
+
 
 
 class RPSGame
