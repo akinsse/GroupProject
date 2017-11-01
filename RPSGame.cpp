@@ -300,7 +300,7 @@ void RPSGame::deleteTools()
 * Description: Processes game play between the computer and human
 ******************************************************************************/
 void RPSGame::play()
-{	
+{
 	int humanValue, compValue;
 	int humanStrength, compStrength;
 	char keepPlaying;
@@ -334,5 +334,4 @@ void RPSGame::play()
 ******************************************************************************/
 RPSGame::~RPSGame()
 {
-	deleteTools();
 }
