@@ -2,7 +2,6 @@
 
 RPSGame::RPSGame()
 {
-	srand((unsigned)time(0));
 	init();
 }
 
