@@ -1,5 +1,18 @@
+/******************************************************************************
+* Authors:     Sean Patrick Akins
+*              Edmund Dea
+*              Trevor Rollins
+*              Nathan Villegas
+* Group:       35
+* Class:       CS162-400
+* Date:        10/27/2017
+* Title:       Group Project
+* Description: Declares the RPSGame class
+******************************************************************************/
+
 #ifndef RPSGAME_HPP
 #define RPSGAME_HPP
+
 #include "inputValidation.hpp"
 #include "paper.hpp"
 #include "rock.hpp"
@@ -7,14 +20,16 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+
 using std::cout;
 using std::endl;
 
-
-
-enum WinType {HumanWin=0, ComputerWin, Tie};
-
-
+enum WinType
+{
+	HumanWin = 0,
+	ComputerWin,
+	Tie
+};
 
 class RPSGame
 {
@@ -44,12 +59,11 @@ private:
 	void printScore();
 	void compare(int cValue, int hValue);
 	void deleteTools();
-	
 
 public:
 	void play();
 	RPSGame();
 	~RPSGame();
 };
-#endif
 
+#endif

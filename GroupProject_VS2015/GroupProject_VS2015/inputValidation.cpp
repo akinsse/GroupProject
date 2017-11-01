@@ -1,10 +1,14 @@
-/*********************************************************************
-** Program name:Input Validation
-** Author:Trevor Rollins
-** Date:10/01/2017
-** Description:This is the implementation file for the input validation
-               functions.
-*********************************************************************/
+/******************************************************************************
+* Authors:     Sean Patrick Akins
+*              Edmund Dea
+*              Trevor Rollins
+*              Nathan Villegas
+* Group:       35
+* Class:       CS162-400
+* Date:        10/27/2017
+* Title:       Group Project
+* Description: Defines the inputValidation class
+******************************************************************************/
 
 #include "inputValidation.hpp"
 

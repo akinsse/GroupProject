@@ -1,20 +1,25 @@
-
-/*********************************************************************
-** Program name:Input Validation
-** Author:Trevor Rollins
-** Date:10/15/2017
-** Description: This is the header file for the input validation functions.
-*********************************************************************/
+/******************************************************************************
+* Authors:     Sean Patrick Akins
+*              Edmund Dea
+*              Trevor Rollins
+*              Nathan Villegas
+* Group:       35
+* Class:       CS162-400
+* Date:        10/27/2017
+* Title:       Group Project
+* Description: header file for the input validation functions.
+******************************************************************************/
 
 #ifndef INPUTVALIDATION_H
 #define INPUTVALIDATION_H
+
 #include <string>
 #include <sstream>
 #include <iostream>
 #include <limits>
+
 using std::string;
 using std::stringstream;
-
 
 int intValidator(int low = std::numeric_limits<int>::min(), int high = std::numeric_limits<int>::max());
 double doubleValidator(double low= std::numeric_limits<double>::min(), double high= std::numeric_limits<double>::max());
