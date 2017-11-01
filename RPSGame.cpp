@@ -71,14 +71,7 @@ void RPSGame::setHumanTool(int strength)
 
 void RPSGame::setCompStrength(int hStrength, int& cStrength)
 {
-	if (hStrength == 1)
-	{
-		cStrength = 1;
-	}
-	else if (hStrength != 1)
-	{
-		cStrength = ((rand() % 3) + (hStrength - 1)); //Sets Comp strength to random value within 1 of human strength
-	}
+	cStrength = hStrength;
 }
 void RPSGame::setHumanStrength(int& hStrength)
 {

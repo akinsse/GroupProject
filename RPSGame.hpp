@@ -1,6 +1,6 @@
 #ifndef RPSGAME_HPP
 #define RPSGAME_HPP
-#include "C:\Code\rec_functions\rec_functions\inputValidation.hpp"
+#include "inputValidation.hpp"
 #include "paper.hpp"
 #include "rock.hpp"
 #include "scissors.hpp"
