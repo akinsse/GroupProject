@@ -1,11 +1,33 @@
+/******************************************************************************
+* Authors:     Sean Patrick Akins
+*              Edmund Dea
+*              Trevor Rollins
+*              Nathan Villegas
+* Group:       35
+* Class:       CS162-400
+* Date:        10/27/2017
+* Title:       Group Project
+* Description: Defines the RPSGame class
+******************************************************************************/
+
 #include "RPSGame.hpp"
 
+/******************************************************************************
+* Function:    RPSGame
+* Arguments:   N/A
+* Description: Default constructor for the RPSGame class
+******************************************************************************/
 RPSGame::RPSGame()
 {
 	srand((unsigned)time(0));
 	init();
 }
 
+/******************************************************************************
+* Function:    init
+* Arguments:   N/A
+* Description: Initializes the win count variables
+******************************************************************************/
 void RPSGame::init()
 {
 	setCompWins(0);
@@ -13,21 +35,41 @@ void RPSGame::init()
 	setTies(0);
 }
 
+/******************************************************************************
+* Function:    setCompWins
+* Arguments:   int cWins
+* Description: Sets the number of computer wins
+******************************************************************************/
 void RPSGame::setCompWins(int cWins)
 {
 	winCount[ComputerWin] = cWins;
 }
 
+/******************************************************************************
+* Function:    setHumanWins
+* Arguments:   int hWins
+* Description: Sets the number of human wins
+******************************************************************************/
 void RPSGame::setHumanWins(int hWins)
 {
 	winCount[HumanWin] = hWins;
 }
 
+/******************************************************************************
+* Function:    setTies
+* Arguments:   int ties
+* Description: Sets the number of ties
+******************************************************************************/
 void RPSGame::setTies(int ties)
 {
 	winCount[Tie] = ties;
 }
 
+/******************************************************************************
+* Function:    setCompTool
+* Arguments:   int strength
+* Description: Sets the computer's tool
+******************************************************************************/
 void RPSGame::setCompTool(int strength)
 {
 	enum Choice { eRock = 0, ePaper, eScissors };
@@ -50,6 +92,11 @@ void RPSGame::setCompTool(int strength)
 	}
 }
 
+/******************************************************************************
+* Function:    setHumanTool
+* Arguments:   int strength
+* Description: Sets the human's tool
+******************************************************************************/
 void RPSGame::setHumanTool(int strength)
 {
 	cout << "Choose your tool (r-rock, p-paper, s-scissor): ";
@@ -69,10 +116,22 @@ void RPSGame::setHumanTool(int strength)
 	}
 }
 
+/******************************************************************************
+* Function:    setCompStrength
+* Arguments:   int hStrength
+*              int& cStrength
+* Description: Sets the computer's tool strength to the human's tool strength
+******************************************************************************/
 void RPSGame::setCompStrength(int hStrength, int& cStrength)
 {
 	cStrength = hStrength;
 }
+
+/******************************************************************************
+* Function:    setHumanStrength
+* Arguments:   int& hStrength
+* Description: Sets the human's tool strength
+******************************************************************************/
 void RPSGame::setHumanStrength(int& hStrength)
 {
 	cout << "Do you want to set different strengths for the tools (Y/N)?";
@@ -89,37 +148,71 @@ void RPSGame::setHumanStrength(int& hStrength)
 	}
 }
 
-
+/******************************************************************************
+* Function:    incCompWins
+* Arguments:   N/A
+* Description: Helper function to increment number of computer wins
+******************************************************************************/
 void RPSGame::incCompWins()
 {
 	winCount[ComputerWin]++;
 }
 
+/******************************************************************************
+* Function:    incHumanWins
+* Arguments:   N/A
+* Description: Helper function to increment number of human wins
+******************************************************************************/
 void RPSGame::incHumanWins()
 {
 	winCount[HumanWin]++;
 }
 
+/******************************************************************************
+* Function:    incTies
+* Arguments:   N/A
+* Description: Helper function to increment number of ties
+******************************************************************************/
 void RPSGame::incTies()
 {
 	winCount[Tie]++;
 }
 
+/******************************************************************************
+* Function:    getCompWins
+* Arguments:   N/A
+* Description: Get function for the computer win count
+******************************************************************************/
 int RPSGame::getCompWins() const
 {
 	return winCount[ComputerWin];
 }
 
+/******************************************************************************
+* Function:    getHumanWins
+* Arguments:   N/A
+* Description: Get function for the human win count
+******************************************************************************/
 int RPSGame::getHumanWins() const
 {
 	return winCount[HumanWin];
 }
 
+/******************************************************************************
+* Function:    getTies
+* Arguments:   N/A
+* Description: Get function for the tie count
+******************************************************************************/
 int RPSGame::getTies() const
 {
 	return winCount[Tie];
 }
 
+/******************************************************************************
+* Function:    getCompTool
+* Arguments:   N/A
+* Description: Get function for the computer's tool
+******************************************************************************/
 Tool* RPSGame::getCompTool() const
 {
 	if (computer != nullptr)
@@ -133,6 +226,11 @@ Tool* RPSGame::getCompTool() const
 	}
 }
 
+/******************************************************************************
+* Function:    getHumanTool
+* Arguments:   N/A
+* Description: Get function for the human's tool
+******************************************************************************/
 Tool* RPSGame::getHumanTool() const
 {
 	if (human != nullptr)
@@ -146,6 +244,11 @@ Tool* RPSGame::getHumanTool() const
 	}
 }
 
+/******************************************************************************
+* Function:    printScore
+* Arguments:   N/A
+* Description: Print the win count score
+******************************************************************************/
 void RPSGame::printScore()
 {
 	cout << "Human wins: " << getHumanWins() << endl;
@@ -153,6 +256,12 @@ void RPSGame::printScore()
 	cout << "Ties: " << getTies() << endl;
 }
 
+/******************************************************************************
+* Function:    compare
+* Arguments:   int cValue
+*              int hValue
+* Description: Determines the winner or if it's a tie
+******************************************************************************/
 void RPSGame::compare(int cValue, int hValue)
 {
 	if (cValue > hValue)
@@ -172,17 +281,27 @@ void RPSGame::compare(int cValue, int hValue)
 	}
 }
 
+/******************************************************************************
+* Function:    deleteTools
+* Arguments:   N/A
+* Description: Cleanup deleting dynamically allocated memory for Tool pointers
+******************************************************************************/
 void RPSGame::deleteTools()
 {
 	delete computer;
 	computer = nullptr;
+
 	delete human;
 	human = nullptr;
 }
 
+/******************************************************************************
+* Function:    play
+* Arguments:   N/A
+* Description: Processes game play between the computer and human
+******************************************************************************/
 void RPSGame::play()
-{
-	
+{	
 	int humanValue, compValue;
 	int humanStrength, compStrength;
 	char keepPlaying;
@@ -209,6 +328,12 @@ void RPSGame::play()
 	} while (keepPlaying != 'N');
 }
 
+/******************************************************************************
+* Function:    ~RPSGame
+* Arguments:   N/A
+* Description: Default destructor for the RPSGame class
+******************************************************************************/
 RPSGame::~RPSGame()
 {
+	deleteTools();
 }
