@@ -18,7 +18,6 @@ FILES += inputValidation.cpp
 FILES += paper.cpp
 FILES += rock.cpp
 FILES += RPSGame.cpp
-FILES += rpsMain.cpp
 FILES += scissors.cpp
 FILES += tool.cpp
 
