@@ -18,6 +18,7 @@ class Tool
 public:
   Tool();
   Tool(int, char);
+  virtual ~Tool() {}
   int getStrength() const;
   char getType() const;
   void setStrength(int);

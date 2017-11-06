@@ -31,7 +31,7 @@ Scissors::Scissors() : Tool ()
 int Scissors::fight(Tool opponentChoice)
 {
   if(opponentChoice.getType() == 'r')
-    return (Tool::getStrength() * 0.5);
+    return (Tool::getStrength() / 2);
   else if (opponentChoice.getType() == 'p')
     return (Tool::getStrength() * 2);
   else
