@@ -6,7 +6,7 @@
 # Group:       35
 # Class:       CS162-400
 # Date:        10/27/2017
-# Description: Makefile for the TIc Tac Toe group project
+# Description: Makefile for the Rock Paper Scissors group project
 ###############################################################################
 
 # Compiler
@@ -25,7 +25,7 @@ FILES += tool.cpp
 OBJ = $(FILES:.cpp=.o)
 
 # Target name
-TARGET = tictactoe.bin
+TARGET = rockpaperscissors.bin
 
 # Compiler Flags
 CFLAGS = -Wall -pedantic -std=c++11 -lboost_regex
